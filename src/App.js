@@ -20,6 +20,11 @@ function App() {
       <hr />
       <h1>Functional Component</h1>
       <Navbar />
+      <hr />
+      <h1>Props</h1>
+      <Navbar title="User App" />
+      <User name="Hasan" department="Bilisim" salary="5000" />
+      <User name="Mehmet" department="Bilisim" salary="6000" />
     </div>
   );
 }
