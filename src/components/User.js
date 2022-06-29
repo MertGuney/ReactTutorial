@@ -7,9 +7,20 @@ class User extends Component {
     salary: "Bilgi Yok",
     department: "Bilgi Yok",
   };
+  state = {
+    isVisible: false,
+  };
+  //Birinci state yöntemi
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     isVisible: false,
+  //   };
+  // }
   render() {
     // Destructing
     const { name, department, salary } = this.props;
+    const { isVisible } = this.state;
     return (
       <div className="col-md-8 mb-4">
         <div className="card">
@@ -17,10 +28,12 @@ class User extends Component {
             <h4 className="d-inline">{name}</h4>
             <i className="far fa-trash-alt" style={{ cursor: "pointer" }}></i>
           </div>
-          <div className="card-body">
-            <p className="card-text"> Maaş: {salary}</p>
-            <p className="card-text"> Department: {department}</p>
-          </div>
+          {isVisible ? (
+            <div className="card-body">
+              s<p className="card-text"> Maaş: {salary}</p>
+              <p className="card-text"> Department: {department}</p>
+            </div>
+          ) : null}
         </div>
       </div>
     );
