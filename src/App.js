@@ -1,30 +1,35 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
-import User from "./components/User";
+import Users from "./components/Users";
 
 function App() {
-  const test = 35;
-  const isAuth = true;
+  state = {
+    users: [
+      {
+        id: 1,
+        name: "mert",
+        salary: "5000",
+        department: "bilisim",
+      },
+      {
+        id: 2,
+        name: "mert g",
+        salary: "5000",
+        department: "bilisim",
+      },
+      {
+        id: 3,
+        name: "mert gu",
+        salary: "5000",
+        department: "bilisim",
+      },
+    ],
+  };
   return (
     <div className="container">
-      <h1 className="header">JSX Operasyon</h1>
-      <h4>1 + 1 Toplam : {1 + 1}</h4>
-      <h4>ToUpperCase : {"mert".toUpperCase()}</h4>
-      <h4>Const Değer : {test}</h4>
-      <div>
-        {isAuth ? <p> Kullanıcı kayıtlı</p> : <p>Kullanıcı kayıtlı değil</p>}
-      </div>
-      <hr />
-      <h1>İlk Component</h1>
-      <User />
-      <hr />
-      <h1>Functional Component</h1>
-      <Navbar />
-      <hr />
-      <h1>Props</h1>
-      <Navbar title="User App" />
-      <User name="Hasan" department="Bilisim" salary="5000" />
-      <User name="Mehmet" department="Bilisim" salary="6000" />
+      <Navbar title="User"/>
+      <hr/>
+      <Users users={this.state.users}/>
     </div>
   );
 }
