@@ -25,11 +25,16 @@ function App() {
       },
     ],
   };
+  deleteUser = (id) => {
+    this.setState({
+      users: this.state.users.filter((user) => id !== user.id),
+    });
+  };
   return (
     <div className="container">
-      <Navbar title="User"/>
-      <hr/>
-      <Users users={this.state.users}/>
+      <Navbar title="User" />
+      <hr />
+      <Users deleteUser={this.deleteUser} users={this.state.users} />
     </div>
   );
 }
